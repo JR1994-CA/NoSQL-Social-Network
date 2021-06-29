@@ -1,17 +1,25 @@
 {
   "name": "SocialNetwork",
   "version": "1.0.0",
-  "private": true,
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JR1994-CA/NoSQL-Social-Network.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.12.15"
-  }
+  "bugs": {
+    "url": "https://github.com/JR1994-CA/NoSQL-Social-Network/issues"
+  },
+  "homepage": "https://github.com/JR1994-CA/NoSQL-Social-Network#readme"
 }
