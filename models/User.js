@@ -1,7 +1,6 @@
-const dateFormat = require('../utils/dateFormat');
 const { Schema, model } = require('mongoose');
 
-const User = new Schema (
+const UserSchema = new Schema (
     {
         username: {
             type: String,
@@ -13,8 +12,7 @@ const User = new Schema (
             type: String,
             required: true,
             unique: true,
-            validate: [validateEmail, 'Please fill a valid email address'],
-            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Enter a valid email address'],
     
         },
         thoughts: [
@@ -40,10 +38,10 @@ const User = new Schema (
 
 );
 
-User.virtual(friendCount).get(function () {
-    return this.friends.reduce((total, friends) => total + User.friends.length + 1, 0);
-});
+const User = model('User', UserSchema);
 
-const User = model('User', User);
+// User.virtual(friendCount).get(function () {
+//     return this.friends.length;
+// });
 
 module.exports = User;
